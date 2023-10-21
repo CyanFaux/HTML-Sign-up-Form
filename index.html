@@ -1,39 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vacation Time!</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <nav>
-        Enter the Contest for the Vacation of a Lifetime
-    </nav>
-    <main>
-        <h2>Vacation Contest Sign-Up Form</h2>
-        <form> <!-- TODO: Set Action and Method Properties -->
-            <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <!-- TODO: Create a "lastname" input with type "text" -->
-            </div>
-            <!-- TODO: Make fieldset and legend -->
-            <!-- Todo: Email Input -->
-            <!-- Todo: Street Address Input -->
-            <!-- Todo: City, State, and Zip Inputs -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-            <!-- TODO: Second fieldset -->
-            <!-- TODO: Radio buttons for selecting preferred destination -->
-            <!-- TODO: Color input for selecting favorite color -->
-            <!-- TODO: Checkboxes for selecting extra add-ons -->
-            
-            <!-- TODO: Submit Button -->
-        </form>
+  <body>
+    <nav>Enter the Contest for the Vacation of a Lifetime</nav>
+    <main>
+      <h2>Vacation Contest Sign-Up Form</h2>
+      <form method="GET" action="results.html">
+        <!-- TODO: Set Action and Method Properties -->
+        <div>
+          <label for="firstname"
+            >Your First Name <span class="required-field">*</span></label
+          >
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            required
+            minlength="2"
+            maxlength="35"
+          />
+          <label for="lastname"
+            >Your Last Name <span class="required-field">*</span></label
+          >
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            required
+            minlength="2"
+            maxlength="35"
+          />
+          <label for="age">Your Age</label>
+          <input type="number" name="age" id="age" min="21" max="120" />
+          <h4>One must be age 21 or older to enter the contest.</h4>
+
+          <!-- TODO: Create a "lastname" input with type "text" -->
+        </div>
+        <fieldset>
+          <!-- TODO: Make fieldset and legend -->
+          <legend>Your Contact Info</legend>
+          <label for="email"
+            >Your Email <span class="required-field">*</span></label
+          ><!-- Todo: Email Input -->
+          <input type="text" id="email" name="email" required />
+          <label for="address">Your Address</label>
+          <input
+            type="text"
+            name="address"
+          /><!-- Todo: Street Address Input -->
+          <label for="city">Your City</label>
+          <input type="text" name="city" />
+          <label for="state">Your State</label>
+          <input name="state" list="state-list" />
+          <datalist id="state-list">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CT">Connecticut</option>
+            <option value="CO">Colorado</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="IA">Iowa</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="MA">Massachussets</option>
+            <option value="MD">Maryland</option>
+            <option value="ME">Maine</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MO">Missouri</option>
+            <option value="MS">Mississippi</option>
+            <option value="MT">Montana</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="NE">Nebraska</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NV">Nevada</option>
+            <option value="NY">New York</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VA">Virginia</option>
+            <option value="VT">Vermont</option>
+            <option value="WA">Washington</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WV">West Virginia</option>
+            <option value="WY">Wyoming</option>
+          </datalist>
+          <label for="zip">Your Zipcode</label>
+          <input
+            type="text"
+            name="zip"
+            pattern="[0-9]{5}"
+            title="5-Digit US ZIP Code"
+          /><!-- Todo: City, State, and Zip Inputs -->
+        </fieldset>
+        <label>Your Secret Code <span class="required-field">*</span></label>
+        <input
+          type="password"
+          required
+          title="6 Alphanumeric Character Passcode"
+          pattern="[A-Za-z0-9]{6}"
+        />
+        <fieldset>
+          <!-- TODO: Second fieldset -->
+          <legend>Your Preferences</legend>
+          <h3>Choose your location</h3>
+          <!-- TODO: Radio buttons for selecting preferred destination -->
+          <div>
+            <label for="aruba">Aruba</label
+            ><input type="radio" name="location" id="aruba" value="Aruba" checked />
+          </div>
+          <div>
+            <label for="japan">Japan</label
+            ><input
+              type="radio"
+              name="location"
+              id="japan"
+              value="Japan"
+            />
+          </div>
+          <div>
+            <label for="reykjavik">Reykjavik</label
+            ><input
+              type="radio"
+              name="location"
+              id="reykjavik"
+              value="Reykjavik"
+            />
+          </div>
+          <div>
+            <label for="new-zealand">New Zealand</label
+            ><input
+              type="radio"
+              name="location"
+              id="new-zealand"
+              value="New Zealand"
+            />
+          </div>
+        </fieldset>
+        <label for="color">Your Favorite Color</label>
+        <input
+          name="color"
+          type="color"
+        /><!-- TODO: Color input for selecting favorite color -->
+        <h3>Fun Extras</h3>
+        <label for="extras">Sauna Access</label>
+        <input name="extras" type="checkbox" id="sauna" value="sauna" checked />
+        <label for="extras">Room Hot Tub</label>
+        <input
+          name="extras"
+          type="checkbox"
+          id="hot-tub"
+          value="hot-tub"
+        /><!-- TODO: Checkboxes for selecting extra add-ons -->
+        <label for="extras">Massage Parlor</label>
+        <input name="extras" type="checkbox" id="massage" value="massage" />
+        <input
+          type="submit"
+          value="Enter The Contest"
+        /><!-- TODO: Submit Button -->
+      </form>
     </main>
     <footer>
-        <h2>Resource Attributions</h2>
-        <p>All images provided for free use via <a href="https://unsplash.com/">Unsplash.com</a> whose generous <a href="https://unsplash.com/license">license details can be found here</a>.</p>
+      <h2>Resource Attributions</h2>
+      <p>
+        All images provided for free use via
+        <a href="https://unsplash.com/">Unsplash.com</a> whose generous
+        <a href="https://unsplash.com/license"
+          >license details can be found here</a
+        >.
+      </p>
     </footer>
-</body>
+  </body>
 </html>
